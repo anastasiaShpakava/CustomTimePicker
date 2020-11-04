@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="167dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/picture"
+        tools:ignore="MissingConstraints,contentDescription" />
+
+    <TextView
+        android:id="@+id/textUnderPicture"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="@string/text_under_picture"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        tools:ignore="MissingConstraints,NotSibling" />
+
+    <LinearLayout
+        android:id="@+id/view"
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ListView
+            android:id="@+id/hours_list"
+            android:layout_width="match_parent"
+            android:layout_height="313dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:divider="@color/white"
+            android:dividerHeight="7dp"
+            android:paddingLeft="6dp"
+            android:scrollbars="none" />
+
+        <ListView
+            android:id="@+id/minutes_list"
+            android:layout_width="match_parent"
+            android:layout_height="313dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:divider="@color/white"
+            android:dividerHeight="7dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scrollbars="none" />
+
+        <ListView
+            android:id="@+id/day_of_time_list"
+            android:layout_width="match_parent"
+            android:layout_height="313dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:divider="@color/white"
+            android:dividerHeight="7dp"
+            android:paddingStart="4dp"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+
+</RelativeLayout>
