@@ -30,13 +30,13 @@ public class CustomPagerAdapter extends PagerAdapter {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//                positionOffsetPixels = (int) (pagerNavigationView.calculateScreenMiddle() * positionOffset);
-//                pagerNavigationView.onScrollToLastPagePercentage(position, positionOffsetPixels);
+                positionOffsetPixels = (int) (pagerNavigationView.calculateScreenMiddle() * positionOffset);
+                pagerNavigationView.onScrollToLastPagePercentage(position, positionOffsetPixels);
             }
 
             @Override
             public void onPageSelected(int position) {
-                //   pagerNavigationView.onLastPageReached(position);
+                 //  pagerNavigationView.onLastPageReached(position);
             }
 
             @Override

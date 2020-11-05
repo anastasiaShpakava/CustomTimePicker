@@ -7,9 +7,9 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,27 +49,27 @@ public class PagerNavigationView extends LinearLayout {
         currentPositionIndicatorView.addTab(currentPositionIndicatorView.newTab().setIcon(R.drawable.tab_indicator_selected));
         currentPositionIndicatorView.addTab(currentPositionIndicatorView.newTab().setIcon(R.drawable.tab_indicator_default));
 
-//        currentPositionIndicatorView.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                int position = tab.getPosition();
-//                if (position == 1) {
-//                    Toast.makeText(context, "first", Toast.LENGTH_SHORT).show();
-//                }
-//                Toast.makeText(context, "NOfirst", Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
+        currentPositionIndicatorView.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                if (position == 1) {
+                    Toast.makeText(context, "first", Toast.LENGTH_SHORT).show();
+                }
+                Toast.makeText(context, "NOfirst", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
 
@@ -87,18 +87,18 @@ public class PagerNavigationView extends LinearLayout {
         calculatedScreenMiddle = middleScreen - buttonWidth / 2;
         return calculatedScreenMiddle;
     }
-
-    public void onLastPageReached(int position) {
-        TranslateAnimation animationToMove = new TranslateAnimation(0, -calculateScreenMiddle(), 0, 0);
-        animationToMove.setDuration(3000);
-        animationToMove.setFillAfter(true);
-        TranslateAnimation animationToReturn = new TranslateAnimation(0, -calculateScreenMiddle(), 0, 0);
-        if (position == 1) {
-            buttonToNextView.startAnimation(animationToMove);
-        } else {
-            buttonToNextView.startAnimation(animationToReturn);
-        }
-    }
+//
+//    public void onLastPageReached(int position) {
+//        TranslateAnimation animationToMove = new TranslateAnimation(0, -calculateScreenMiddle(), 0, 0);
+//        animationToMove.setDuration(3000);
+//        animationToMove.setFillAfter(true);
+//        TranslateAnimation animationToReturn = new TranslateAnimation(0, -calculateScreenMiddle(), 0, 0);
+//        if (position == 1) {
+//            buttonToNextView.startAnimation(animationToMove);
+//        } else {
+//            buttonToNextView.startAnimation(animationToReturn);
+//        }
+//    }
 
     public void onScrollToLastPagePercentage(int position, int movingDistanceForButton) {
         if (position == 1) {
