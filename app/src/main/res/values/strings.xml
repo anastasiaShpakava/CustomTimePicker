@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CustomTimePicker</string>
+    <string name="app_name">Time Picker</string>
     <string name="text_under_picture">HELLO!!!</string>
     <string name="skip">skip</string>
 </resources>
