@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical" />
 
-    <com.mobileappsoft.uitests.PagerNavigationView
+    <com.company.customtimepicker.PagerNavigationView
         android:id="@+id/pager_navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
